@@ -7,6 +7,7 @@ import consoleStamp from "console-stamp";
 import indexRoutes from "./Routes/IndexRoutes.js";
 import filesRoutes from "./Routes/Fiiles/FilesRoutes.js";
 import "dotenv/config";
+import limiter from "./Middleware/RateLimitMiddleware.js";
 
 const app = express();
 const port = process.env.PORT;
@@ -27,7 +28,7 @@ app.disable("x-powered-by");
 app.use(cors());
 app.use(express.json());
 app.use("/", indexRoutes);
-app.use("/files", filesRoutes);
+app.use("/files", [limiter], filesRoutes);
 
 app.listen(port, () => {
   console.log(`Starting ToolBox API on port ${port}`);

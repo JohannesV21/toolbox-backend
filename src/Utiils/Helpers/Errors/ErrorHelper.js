@@ -1,5 +1,4 @@
 export const mapError = (error) => {
-  //   console.log("Error desde mapper function: ", error);
   if (error.response) {
     // Error con respuesta del servidor
     return {
