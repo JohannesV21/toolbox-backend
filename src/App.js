@@ -4,7 +4,8 @@ import morgan from "morgan";
 import moment from "moment";
 import clc from "cli-color";
 import consoleStamp from "console-stamp";
-import routes from "./Routes/Routes.js";
+import indexRoutes from "./Routes/IndexRoutes.js";
+import filesRoutes from "./Routes/Fiiles/FilesRoutes.js";
 import "dotenv/config";
 
 const app = express();
@@ -22,9 +23,11 @@ morgan.token("customDate", (req, res) => moment().format(morganDateFormat));
 consoleStamp(console, { format: consoleTimeFormat });
 app.use(morgan(morganDebugFormat));
 
+app.disable("x-powered-by");
 app.use(cors());
-app.use(express.text({ type: "text/xml" }));
-app.use("/", routes);
+app.use(express.json());
+app.use("/", indexRoutes);
+app.use("/files", filesRoutes);
 
 app.listen(port, () => {
   console.log(`Starting ToolBox API on port ${port}`);
