@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha './src/test/**/*.js'",
     "lint": "standard",
     "start": "nodemon ./src/App.js",
     "prod": "node ./src/App.js"
@@ -24,8 +24,11 @@
     "p-limit": "^6.1.0"
   },
   "devDependencies": {
+    "chai": "^5.1.1",
     "cli-color": "^2.0.4",
     "express": "^4.19.2",
+    "mocha": "^10.7.3",
+    "nock": "^13.5.5",
     "nodemon": "^3.1.4",
     "standard": "^17.1.0"
   }

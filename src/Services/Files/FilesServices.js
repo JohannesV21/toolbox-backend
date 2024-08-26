@@ -1,4 +1,4 @@
-import { BACK_URL, http } from '../../Configs/HttpServices.js'
+import { BACK_URL, http } from '../../Config/HttpServices.js'
 import { mapError } from '../../Utiils/Helpers/Errors/ErrorHelper.js'
 import { formatFileData } from '../../Utiils/Helpers/Formatters/FormatLinesFiles.js'
 import pLimit from 'p-limit'
@@ -41,16 +41,18 @@ export const fetchFilesData = async () => {
 
 export const getFilesListService = async () => {
   try {
+    // console.log(BACK_URL, process.env.API_TOOLBOX)
     const response = await http.get(`${BACK_URL}/files`, {
       headers: { Authorization: 'Bearer aSuperSecretKey' }
     })
 
-    console.log('Data Files List: ', response.data.files)
+    // console.log('Data Files List: ', response.data.files)
 
     return response.data.files
   } catch (error) {
     const mappedError = mapError(error)
     console.error(`Error in Files List Services: ${mappedError.message}`)
+
     throw mappedError
   }
 }

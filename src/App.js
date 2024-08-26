@@ -6,7 +6,7 @@ import indexRoutes from './Routes/IndexRoutes.js'
 import filesRoutes from './Routes/Fiiles/FilesRoutes.js'
 import 'dotenv/config'
 import limiter from './Middleware/RateLimitMiddleware.js'
-import { configureLogs } from './Configs/LogConfigs.js'
+import { configureLogs } from './Config/LogConfigs.js'
 
 const app = express()
 const port = process.env.PORT
