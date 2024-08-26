@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { getFilesData } from "../../Controllers/Files/FilesController.js";
+import { FormattedFilesController } from "../../Controllers/Files/FormattedFilesController.js";
+import { FilesListController } from "../../Controllers/Files/FileListController.js";
 
 const router = Router();
 
-router.get("/data", getFilesData);
+router.get("/data", FormattedFilesController);
+router.get("/list", FilesListController);
 
 export default router;
