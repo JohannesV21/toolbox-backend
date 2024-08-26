@@ -1,8 +1,8 @@
-import { Router } from "express";
-import { WelcomeApi } from "../Controllers/index.js";
+import { Router } from 'express'
+import { WelcomeApi } from '../Controllers/index.js'
 
-const router = Router();
+const router = Router()
 
-router.get("/", WelcomeApi);
+router.get('/', WelcomeApi)
 
-export default router;
+export default router

@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/App.js",
+    "lint": "standard",
+    "start": "nodemon ./src/App.js",
     "prod": "node ./src/App.js"
   },
   "keywords": [],
@@ -25,6 +26,7 @@
   "devDependencies": {
     "cli-color": "^2.0.4",
     "express": "^4.19.2",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "standard": "^17.1.0"
   }
 }
