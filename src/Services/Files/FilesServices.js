@@ -6,6 +6,15 @@ import pLimit from 'p-limit'
 // Establece un límite de concurrencia
 const limit = pLimit(10)
 
+/**
+ * Obtiene y formatea los datos de múltiples archivos.
+ *
+ * Recupera la lista de archivos, solicita los datos de cada uno en paralelo
+ * (con un límite de concurrencia) y formatea los datos obtenidos.
+ *
+ * @returns {Promise<Array<{ file: string, lines: Array<object> }>>} - Lista de archivos con sus datos formateados.
+ * @throws {Error} - Error si la solicitud o el procesamiento falla.
+ */
 export const fetchFilesData = async () => {
   const filesList = await getFilesListService()
 
@@ -39,6 +48,12 @@ export const fetchFilesData = async () => {
   }
 }
 
+/**
+ * Obtiene la lista de archivos desde el API externo.
+ *
+ * @returns {Promise<object>} - Datos del archivo.
+ * @throws {Error} - Error si la solicitud falla.
+ */
 export const getFilesListService = async () => {
   try {
     // console.log(BACK_URL, process.env.API_TOOLBOX)
@@ -57,6 +72,13 @@ export const getFilesListService = async () => {
   }
 }
 
+/**
+ * Obtiene los datos de un archivo específico desde el API externo.
+ *
+ * @param {string} fileName - El nombre del archivo.
+ * @returns {Promise<object>} - Datos del archivo.
+ * @throws {Error} - Error si la solicitud falla.
+ */
 export const getFileService = async (fileName) => {
   try {
     const response = await http.get(`${BACK_URL}/file/${fileName}`, {
