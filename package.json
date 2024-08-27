@@ -7,8 +7,8 @@
   "scripts": {
     "test": "mocha './src/Test/**/*.js'",
     "lint": "standard",
-    "start": "nodemon ./src/App.js",
-    "prod": "node ./src/App.js"
+    "dev": "nodemon ./src/App.js",
+    "start": "node ./src/App.js"
   },
   "keywords": [],
   "author": "",
