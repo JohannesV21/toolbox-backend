@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { WelcomeApi } from '../Controllers/index.js'
+import { WelcomeApi } from '../Controllers/IndexController.js'
 
 const router = Router()
 
