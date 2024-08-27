@@ -45,6 +45,26 @@ Para poder correr el proyecto satisfactoriamente es necesario tener instalados l
 ❯ npm run start
 ```
 
+### Otros comandos:
+
+- Ejecutar test:
+
+```bash
+❯ npm run test
+```
+
+- Ejecutar el servidor en modo desarrollo:
+
+```bash
+❯ npm run dev
+```
+
+- Ejecutar script para validar StandarJs
+
+```bash
+❯ npm run lint
+```
+
 ## 🌐 Endpoints:
 
 Endpoints disponible a consultar:

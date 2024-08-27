@@ -30,7 +30,7 @@ describe('Pruebas unitarias para getFilesListService', function () {
   })
 
   it('Deberia dar error no autorizado al no pasarle el API_KEY', async function () {
-    nock(BACK_URL).get(`/files`).reply(401, { message: 'API KEY is required' })
+    nock(BACK_URL).get('/files').reply(401, { message: 'API KEY is required' })
     try {
       await getFilesListService()
     } catch (err) {
