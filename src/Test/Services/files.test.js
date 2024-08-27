@@ -1,6 +1,6 @@
-import { BACK_URL } from '../Config/HttpServices.js'
+import { BACK_URL } from '../../Config/HttpServices.js'
 import { expect, assert } from 'chai'
-import { getFileService } from '../Services/Files/FilesServices.js'
+import { getFileService } from '../../Services/Files/FilesServices.js'
 import nock from 'nock'
 
 describe('Pruebas unitarias para getFileService', function () {

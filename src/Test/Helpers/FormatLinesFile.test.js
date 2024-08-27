@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { formatFileData } from '../Utiils/Helpers/Formatters/FormatLinesFiles.js'
+import { formatFileData } from '../../Utiils/Helpers/Formatters/FormatLinesFiles.js'
 
 describe('Pruebas unitarias para el helper formatFileData', function () {
   it('Debería generar un error por formato de archivo CSV incorrecto', function () {
@@ -49,11 +49,11 @@ describe('Pruebas unitarias para el helper formatFileData', function () {
   })
 
   it('Deberia ignorar las lineas con datos incorrectos o faltantes.', function () {
-    const csvWithIncorrectData = `file,text,number,hex\n 
-      file2.csv,Some text,invalidNumber,abcdef1234567890abcdef1234567890\n 
-      file2.csv,Another text,123,shortHex\n 
+    const csvWithIncorrectData = `file,text,number,hex\n
+      file2.csv,Some text,invalidNumber,abcdef1234567890abcdef1234567890\n
+      file2.csv,Another text,123,shortHex\n
       file2.csv,Valid text,123456789,1234567890abcdef1234567890abcdef\n
-      file2.csv,Valid text,123456789,,`
+      file2.csv,Any text,123456789,,`
 
     const expected = [
       {
@@ -69,7 +69,7 @@ describe('Pruebas unitarias para el helper formatFileData', function () {
   })
 
   it('Deberia retornar un array vacio si no hay lineas correctas en el archivo', function () {
-    const emptyCSV = `file,text,number,hex\n  
+    const emptyCSV = `file,text,number,hex\n
     file1.csv,dfjkdf,2323,1234567890abcdef1234567890abcdef,,\n
     file1.csv,dfjkdf,2323,1234567890abcdef1234567890af\n
     file2.csv,,,,\n

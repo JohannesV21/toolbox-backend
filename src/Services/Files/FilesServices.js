@@ -10,7 +10,7 @@ const limit = pLimit(10)
  * Obtiene y formatea los datos de múltiples archivos.
  *
  * Recupera la lista de archivos, solicita los datos de cada uno en paralelo
- * (con un límite de concurrencia) y formatea los datos obtenidos.
+ * (con un límite y/o ventana de concurrencia) y formatea los datos obtenidos.
  *
  * @returns {Promise<Array<{ file: string, lines: Array<object> }>>} - Lista de archivos con sus datos formateados.
  * @throws {Error} - Error si la solicitud o el procesamiento falla.
