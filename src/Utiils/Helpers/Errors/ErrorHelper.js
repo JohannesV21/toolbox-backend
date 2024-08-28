@@ -1,3 +1,6 @@
+/**
+ * Mapea un objeto de error a una estructura estándar con información sobre el error.
+ */
 export const mapError = (error) => {
   if (error.response) {
     // Error con respuesta del servidor
