@@ -10,6 +10,11 @@
     "dev": "nodemon ./src/App.js",
     "start": "node ./src/App.js"
   },
+  "standard": {
+  "ignore": [
+    "src/Test/**/*.test.js"
+  ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
